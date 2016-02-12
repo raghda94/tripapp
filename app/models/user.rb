@@ -8,4 +8,34 @@ class User < ActiveRecord::Base
 	validates :work, presence: true
 	has_secure_password
     validates :password, presence: true, length: { minimum: 6 }
+
+    #Returns the hash of the given string 
+    def User.digest(string)
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+        BCrypt::Password.create(string, cost: cost)
+    end
+
+    #Returns a random token
+    def User.new_token
+        SecureRandom.urlsafe_base64
+    end
+
+    #Remembers a user in the database for use in session
+    def remember
+       self.remember_token = User.new_token
+       
+    end
+
+    #Returns true if the given token matches the digest.
+    def authenticated?(remember_token)
+       if remember_digest.nil?
+           false
+       else
+          BCrypt::Password.new(remember_digest).is_password?(remember_token)
+       end   
+    end
+
+    #Forgets a user.
+    
 end
