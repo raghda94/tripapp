@@ -1,25 +1,32 @@
 <h1>SignUp Here</h1>
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+     <%= form_for(@user) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+         
+         <%= f.label :name %>
+         <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+         <%= f.label :email %>
+         <%= f.email_field :email, class: 'form-control' %>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation %>
+         <%= f.label :password %>
+         <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :home %>
-  <%= f.text_field :home %>
+         <%= f.label :password_confirmation, "Confirmation" %>
+         <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.label :work %>
-  <%= f.text_field :work %>
+         <%= f.label :home %>
+         <%= f.text_field :home , class: 'form-control'%>
 
-   <%= f.submit "SgnUp" %>
-<% end %>   
+         <%= f.label :work %>
+         <%= f.text_field :work, class: 'form-control' %>
+
+         <%= f.submit "SignUp" %>
+     <% end %> 
+  </div>
+</div>     
+
 
 
 
