@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
-    get 'logout' => :destroy
+    post 'logout' => :destroy
   end
 
   # Example of regular route:

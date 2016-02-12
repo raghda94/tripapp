@@ -1,0 +1,28 @@
+<head>
+
+</head>
+    <body>
+<h1> These are all the available trips</h1>
+<div class= "row">
+ <table>
+
+    <% @trips.each do |trip| %>
+      <tr>
+      	<td> Trip Number: </td>
+      	<td><%= trip.id %></td>
+      	<td><%= link_to "trips" , "#" , id: "trips-link" %></td>
+      </tr>
+      <tr>
+      	<td> Source: </td>
+      	<td><%= trip.source %></td>
+      </tr>
+      <tr>
+      	<td> Destination: </td>
+      	<td><%= trip.destination %></td>
+      </tr>
+
+    <% end %>
+ </table>   
+</div>
+
+</body>
