@@ -1,0 +1,20 @@
+<h1> Post a new Trip here </h1>
+<div class = "row">
+  <%= form_for(@trip) do |t| %>
+      <%= t.label :time %>
+      <%= t.text_field :time %></br>
+
+      <%= t.label :source %>
+      <%= t.text_field :source %></br>
+
+      <%= t.label :destination %>
+      <%= t.text_field :destination %></br>
+
+      <%= t.label :owner_id %>
+      <%= t.text_field :owner_id %></br>
+
+
+      <%= t.submit "Post" %>
+
+  <% end %>
+</div>

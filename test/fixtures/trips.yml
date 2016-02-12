@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2016-02-13 00:08:07
+  source: MyString
+  destination: MyString
+  owner_id: 1
+
+two:
+  time: 2016-02-13 00:08:07
+  source: MyString
+  destination: MyString
+  owner_id: 1
