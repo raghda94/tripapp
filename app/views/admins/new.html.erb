@@ -1,0 +1,20 @@
+<h1>You can signup for admin here</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+     <%= form_for(@admin) do |a| %>
+
+         
+         <%= a.label :admin_name %>
+         <%= a.text_field :admin_name, class: 'form-control' %>
+
+         <%= a.label :admin_email %>
+         <%= a.email_field :admin_email, class: 'form-control' %>
+
+         <%= a.label :admin_password %>
+         <%= a.password_field :admin_password, class: 'form-control' %>
+
+
+         <%= a.submit "SignUp" %>
+     <% end %> 
+  </div>
+</div>     

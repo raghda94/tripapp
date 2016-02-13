@@ -1,0 +1,42 @@
+<head>
+
+</head>
+    <body>
+<h1> All Users</h1>
+<div class= "row">
+ <table>
+
+    <% @users.each do |user| %>
+    <% if user.email != current_user.email %>
+    
+      <tr>
+      	<td> Name: </td>
+      	<td><%= user.name %></td>
+      </tr>
+      <tr>
+      	<td> Email: </td>
+      	<td><%= user.email %></td>
+      </tr>
+      <tr>
+      	<td> Work: </td>
+      	<td><%= user.work %></td>
+      </tr>
+      <tr>
+        <td> Home: </td>
+        <td><%= user.home %></td>
+      </tr>
+      <tr>
+        <td> Trips Joined: </td>
+        <td><%= user.joined_trips %></td>
+      </tr>
+      <tr>
+        <td> Trips Posted: </td>
+        <td><%= user.posted_trips %></td>
+      </tr>
+    <% end %>
+
+    <% end %>
+ </table>   
+</div>
+
+</body>

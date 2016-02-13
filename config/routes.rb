@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,12 +14,15 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get '/adminsignup' => 'admins#new'
   resources :users do
      member do
     get 'join_trip' => :join_trip
   end
 end
   resources :trips
+  resources :admins
+
 
   controller :sessions do
     get 'login' => :new

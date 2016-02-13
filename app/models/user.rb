@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+ 
 
   has_many :trips, dependent: :destroy
 	before_save { self.email = email.downcase }
