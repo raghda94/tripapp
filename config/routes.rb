@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/adminsignup' => 'admins#new'
   resources :users do
      member do
-    get 'join_trip' => :join_trip
+    post 'join_trip' => :join_trip
   end
 end
   resources :trips

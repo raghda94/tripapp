@@ -32,6 +32,7 @@ class TripsController < ApplicationController
 		@trip = Trip.find(params[:id])
 		@user_id= @trip.owner_id
 		@user= User.find_by(id: @user_id)
+ 
 	end
 
 	def update

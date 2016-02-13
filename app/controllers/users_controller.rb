@@ -33,9 +33,10 @@ class UsersController < ApplicationController
 	def join_trip
 		@user= User.find(params[:id])
 		if @user.update_attribute("joined_trips", @user.joined_trips + 1)
-			redirect_to root_url
-		else
+			flash[:success] = "You have successfuly joined this trip!"
 			redirect_to trips_path
+		else
+			redirect_to root_url
 		end	
 
 	end	

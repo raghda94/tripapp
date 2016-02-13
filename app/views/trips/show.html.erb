@@ -18,8 +18,11 @@
       <td> Owner Name: </td>
 	  <td> <%= @user.name %> </td>
     </tr>
-
-	<%= link_to 'Join Trip ', join_trip_user_path(@current_user.id)  %>
-
-
+    
 </table>
+
+<div class="row">
+  <%= button_to "Join Trip", join_trip_user_path(@current_user.id)  %>
+</div>  
+
+ 
