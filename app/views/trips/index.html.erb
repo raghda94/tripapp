@@ -7,10 +7,11 @@
  <table>
 
     <% @trips.each do |trip| %>
+    
       <tr>
       	<td> Trip Number: </td>
       	<td><%= trip.id %></td>
-      	<td><%= link_to "trips" , "#" , id: "trips-link" %></td>
+      	<td><%= link_to 'Open ', trip_path(trip)  %></td>
       </tr>
       <tr>
       	<td> Source: </td>
@@ -20,6 +21,7 @@
       	<td> Destination: </td>
       	<td><%= trip.destination %></td>
       </tr>
+    
 
     <% end %>
  </table>   
