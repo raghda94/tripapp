@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  resources :users
+  resources :users do
+     member do
+    get 'join_trip' => :join_trip
+  end
+end
   resources :trips
 
   controller :sessions do

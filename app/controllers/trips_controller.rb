@@ -12,6 +12,8 @@ class TripsController < ApplicationController
 	def create
 		@trip= Trip.new(trip_params)
 		@trip.owner_id= current_user.id
+		@user= User.find_by(id: @trip.owner_id)
+		@user.update_attribute("posted_trips", @user.posted_trips + 1)
 		if @trip.save
 			flash[:success] = "You have posted a new trip!"
 			redirect_to @trip
@@ -26,6 +28,7 @@ class TripsController < ApplicationController
 	end
 
 	def show
+		@current_user= User.find_by(id: current_user.id)
 		@trip = Trip.find(params[:id])
 		@user_id= @trip.owner_id
 		@user= User.find_by(id: @user_id)
