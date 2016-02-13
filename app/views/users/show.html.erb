@@ -1,3 +1,4 @@
-<h2>You have successfully signed in </h2>
-<%= link_to 'Click Here to post a new trip', new_trip_path %>
-<%= link_to 'Logout', logout_path, method: :destroy %>
+<h2>Welcome <%= @user.name %> </h2>
+<%= link_to 'Click Here to post a new trip', new_trip_path %></br>
+<%= link_to 'Logout', logout_path, method: :destroy %></br>
+<%= link_to 'Click Here to See all the available trips', trips_path %>

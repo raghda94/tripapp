@@ -8,6 +8,9 @@
 
     <% @trips.each do |trip| %>
     <% if trip.owner_id != current_user.id %>
+    <% if Time.now.strftime("%m/%d/%Y") < trip.trip_date.strftime("%m/%d/%Y") %>
+
+    
     
       <tr>
       	<td> Trip Number: </td>
@@ -23,9 +26,13 @@
       	<td><%= trip.destination %></td>
       </tr>
     <% end %>
+    <% end %>
+    
+    
 
     <% end %>
  </table>   
 </div>
-
+<%= link_to 'Click Here to return to your profile', user_path(current_user) %></br>
+<%= link_to 'Click Here to return to the homepage', root_path %>
 </body>

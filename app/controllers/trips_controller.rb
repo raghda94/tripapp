@@ -16,7 +16,7 @@ class TripsController < ApplicationController
 		@user.update_attribute("posted_trips", @user.posted_trips + 1)
 		if @trip.save
 			flash[:success] = "You have posted a new trip!"
-			redirect_to @trip
+			redirect_to trips_path
 		else
 			flash[:success] = "This trip has already been posted!"
 		    render 'new'
@@ -41,7 +41,7 @@ class TripsController < ApplicationController
 	def destroy
 	end	
 	def trip_params
-		params.require(:trip).permit(:time, :source, :destination
+		params.require(:trip).permit(:trip_date, :source, :destination
                                )
 	end	
 end

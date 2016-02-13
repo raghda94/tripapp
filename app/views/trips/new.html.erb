@@ -1,14 +1,18 @@
 <h1>Here you can post a new trip</h1>
 <div class="row">
     <%= form_for(@trip) do |f| %>
-          <%= f.label :time %>
-          <%= f.text_field :time %><br />
+          <%= f.label :date %>
+          <%= f.text_field :trip_date %><br />
+
+         
 
           <%= f.label :source %>
           <%= f.text_field :source %><br />
 
           <%= f.label :destination %>
           <%= f.text_field :destination %><br />
+
+          
 
           
           <%= f.submit "Post" %>
